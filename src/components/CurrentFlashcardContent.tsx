@@ -25,17 +25,14 @@ export default function CurrentFlashcardContent({
   }, [currentQuestion]);
 
   return (
-    <div
-      className={`flashcard-content ${revealAnswer && "asnwer"}`}
-      // style={{ backgroundColor: `${revealAnswer && "#92ADEB"}` }}
-    >
+    <div className={`flashcard-content ${revealAnswer && "asnwer"}`}>
       <div className="flashcard-tag text-preset-6">{currentQuestion.category}</div>
       <div className="question-container">
         {revealAnswer ? (
           <>
             {" "}
             <div className="flashcard-hint text-preset-4-medium">Answer:</div>
-            <div className="flashcard-question text-preset-1">HyperText Markup Language</div>
+            <div className="flashcard-question text-preset-1">{currentQuestion.answer}</div>
           </>
         ) : (
           <>
